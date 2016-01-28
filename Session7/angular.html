@@ -1,0 +1,25 @@
+<html ng-app="myModule">
+<body>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+<script src="angular.js"></script>
+</head>
+<div ng-controller="myController">
+	<table width="100%">
+		<tr>
+			<thead>Technology</thead>
+			<thead>Likes</thead>
+			<thead>DisLikes</thead>
+			<thead>Action</thead>
+		</tr>
+		<tr ng-repeat="subject in technologies">
+			<td>{{subject.name}}</td>
+			<td>{{subject.like}}</td>
+			<td>{{subject.dislike}}</td>
+			<td><input type="button"  value="Likes" ng-click="incrementLikes(subject)">
+			<input type="button" value="DisLikes" ng-click="incrementDislikes(subject)"></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

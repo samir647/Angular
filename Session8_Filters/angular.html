@@ -1,0 +1,32 @@
+<html ng-app="myModule">
+<body>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+<script src="angular.js"></script>
+</head>
+<div ng-controller="myController">
+<input type="number" step="1" min="0" max="5" ng-model="rowlimit">
+Order by:<Select name="select">
+
+</select>
+	<table width="100%" border="1">
+  <tr>
+    <td>Name</td>
+    <td>DOB</td>
+    <td>Gender</td>
+    <td>Salary</td>
+	<td>Salary</td>
+  </tr>
+  <tr ng-repeat="employee in employees | limitTo:rowlimit | orderBy:'+name'">
+    <td>{{employee.name| uppercase}}</td>
+    <td>{{employee.dateofBirth | date:"dd/MM/yyyy"}}</td>
+    <td>{{employee.gender | lowercase}}</td>
+    <td>{{employee.salary |number:2}}</td>
+	<td>{{employee.salary |currency:"$"}}</td>
+  </tr>
+  </tr>
+</table>
+
+</div>
+</body>
+</html>
