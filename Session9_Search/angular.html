@@ -7,15 +7,13 @@
 <div ng-controller="myController">
 Filter by Name<input type="text" placeholder="Search Name" ng-model="SearchText.name">
 Filter by City<input type="text" placeholder="Search City" ng-model="SearchText.City">
-Exact Match<input type="checkbox" ng-model="exactMatch">
 	<table width="100%" border="1">
 		<tr>
 			<th>Name</th>
 			<th>City</th>
 			<th>Gender</th>
 		</tr>
-		<tr ng-repeat="employee in employees |filter:SearchText:exactMatch:true ">
-	<!--	<tr ng-repeat="employee in employees |filter:SearchText ">-->
+		<tr ng-repeat="employee in employees |filter:SearchText">
 			<td>{{employee.name}}</td>
 			<td>{{employee.City}}</td>
 			<td>{{employee.Gender}}</td>
