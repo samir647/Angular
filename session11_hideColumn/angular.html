@@ -1,0 +1,22 @@
+<html ng-app="myModule">
+<body>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+<script src="angular.js"></script>
+</head>
+<div ng-controller="myController">
+Hide Gender<input type="checkbox" ng-model="hideGender">	<table width="100%" border="1">
+		<tr>
+			<th>Name</th>
+			<th>City</th>
+			<th ng-hide="hideGender">Gender</th>
+		</tr>
+		<tr ng-repeat="employee in employees ">
+			<td>{{employee.name}}</td>
+			<td>{{employee.City}}</td>
+			<td ng-hide="hideGender">{{employee.Gender}}</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
